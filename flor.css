@@ -1,0 +1,150 @@
+body{
+    background-color: rgb(255, 247, 212);
+    margin: 0;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+header{
+    display: flex;
+    height: 215px;
+    background-color: rgb(255, 242, 125);
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #050505;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.contenedor {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;     /* Alinea las cajas en fila horizontal */
+    justify-content: center; /* Centra el grupo de cajas en la pantalla */
+    align-items: center;     /* Alinea las cajas verticalmente */
+    gap: 15px;               /* Un espacio ligeramente más pequeño entre cajas */
+    padding: 20px;
+    flex-wrap: nowrap;       /* FORZA a que nunca se bajen a una segunda fila */
+}
+
+.caja1{
+width: 160px;            /* Reducimos el ancho (de 200px a 160px) */
+    height: 60px;
+    background: rgba(253, 255, 143, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(243, 206, 206, 0.2);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.caja2 {
+width: 160px;            /* Reducimos el ancho (de 200px a 160px) */
+    height: 60px;
+    background: rgba(253, 255, 143, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(243, 206, 206, 0.2);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.caja3 {
+width: 160px;            /* Reducimos el ancho (de 200px a 160px) */
+    height: 60px;
+    background: rgba(253, 255, 143, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(243, 206, 206, 0.2);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.caja1:hover{
+transform: scale(1.05);
+    background: rgba(255, 255, 180, 0.95);
+}
+
+.caja2:hover {
+transform: scale(1.05);
+    background: rgba(255, 255, 180, 0.95);
+}
+
+.caja3:hover {
+transform: scale(1.05);
+    background: rgba(255, 255, 180, 0.95);
+}
+
+.icono-rosa {
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+}
+
+/* CSS PARA LA ANIMACIÓN DE CAÍDA DE FLORES */
+.rosa-cayendo {
+    position: fixed !important; /* Forza que floten sobre TODA la pantalla */
+    top: -60px;                 /* Empiezan por encima del borde superior */
+    z-index: 99999;             /* Se aseguran de estar por delante del video y footer */
+    pointer-events: none;       /* Evita que bloqueen clics */
+    user-select: none;
+    animation: lluviaCaida linear forwards;
+}
+
+/* Animación de movimiento desde arriba hacia abajo */
+@keyframes lluviaCaida {
+    0% {
+        top: -60px;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 105vh; /* Caen hasta pasarse del fondo de la pantalla */
+        transform: rotate(360deg); /* Van girando mientras caen */
+        opacity: 0.8;
+    }
+}

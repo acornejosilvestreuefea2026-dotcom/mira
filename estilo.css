@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(255, 247, 212);
+    margin: 0;
+    
+    display: flex;
+    flex-direction: column;
+    /* Hace que el body ocupe al menos el 100% de la altura de la pantalla */
+    min-height: 100vh; 
+}
+
+header{
+    display: flex;
+    height: 215px;
+    background-color: rgb(255, 242, 125);
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center;     /* Centra el texto verticalmente */
+    border-bottom: 2px solid #050505;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.contenedor{
+    flex: 1; /* Empuja el footer hacia la parte inferior */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Centra la caja1 horizontalmente */
+    align-items: center;     /* Centra la caja1 verticalmente */
+    padding: 20px;
+}
+
+.caja1{
+    width: 450px;
+    background: rgba(253, 255, 143, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(243, 206, 206, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none; /* Elimina el subrayado azul del enlace */
+    cursor: pointer;      /* Cambia el cursor al pasar por encima */
+}

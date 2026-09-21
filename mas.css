@@ -1,0 +1,160 @@
+body {
+    background-color: rgb(255, 247, 212);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+header {
+    display: flex;
+    height: 115px;
+    background-color: rgb(255, 242, 125);
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #050505;
+    position: relative;
+    z-index: 20;
+}
+
+.imagen-fondo {
+    position: absolute;      /* Al usar absolute, la imagen bajará de forma natural cuando hagas scroll */
+    top: 115px;              /* Comienza exactamente debajo del header */
+    left: 0;
+    width: 100%;             /* Se adapta al ancho disponible */
+    height: auto;            /* Mantiene la proporción original para que la imagen se muestre completa sin recortarse */
+    z-index: 1;
+}
+
+.contenedor {
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    z-index: 100;
+    
+    /* Organiza los botones verticalmente, uno encima del otro */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre el botón del girasol y el de regresar */
+}
+
+.caja1 {
+    width: 200px;
+    background: rgba(253, 255, 143, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(243, 206, 206, 0.4);
+    border-radius: 20px;
+    padding: 12px;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Cambiado a oscuro para mejor contraste con el amarillo */
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    
+    /* Quitamos position: fixed de aquí para que el contenedor controle la posición */
+    position: relative;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.caja2 h3 {
+    color: #eeeeee;
+    font-size: 28px;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.p1 {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, sans-serif; /* Tipografía más moderna que courier */
+    text-align: justify;
+    background-color: transparent; /* Quitamos el fondo gris */
+    margin: 0;
+    padding: 0;
+}
+
+.seccion-contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+
+    /* Aumenta el primer valor (120px) para bajar el bloque todo lo que quieras */
+    margin: 120px auto 40px auto; 
+
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- ACTUALIZACIÓN DE LA IMAGEN --- */
+.img1 {
+    /* Quitado el margin-right: 500px */
+    max-width: 100%;
+    height: auto;             /* Mantiene la proporción de la imagen */
+}
+
+/* --- ACTUALIZACIÓN DE LA CAJA 2 --- */
+.caja2 {
+    flex: 1;                  /* Toma el espacio sobrante horizontalmente */
+    max-width: 600px;         /* Ajusta según el ancho que prefieras */
+    margin: 0;                /* Quitado el margin: 40px auto que tenía antes */
+    
+    background: rgba(15, 15, 20, 0.75);
+    backdrop-filter: blur(10px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* CSS PARA LA ANIMACIÓN DE CAÍDA DE FLORES */
+.rosa-cayendo {
+    position: fixed !important; /* Forza que floten sobre TODA la pantalla */
+    top: -60px;                 /* Empiezan por encima del borde superior */
+    z-index: 99999;             /* Se aseguran de estar por delante del video y footer */
+    pointer-events: none;       /* Evita que bloqueen clics */
+    user-select: none;
+    animation: lluviaCaida linear forwards;
+}
+
+/* Animación de movimiento desde arriba hacia abajo */
+@keyframes lluviaCaida {
+    0% {
+        top: -60px;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 105vh; /* Caen hasta pasarse del fondo de la pantalla */
+        transform: rotate(360deg); /* Van girando mientras caen */
+        opacity: 0.8;
+    }
+}

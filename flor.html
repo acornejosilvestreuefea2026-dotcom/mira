@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira</title>
+    <link rel="stylesheet" href="flor.css">
+</head>
+<body>
+    <header>
+        <h1>¡Exacto! Flores Amarillas</h1>
+    </header>
+
+    <video autoplay muted loop id="video-fondo" style="position: fixed; top: 0; 
+    left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;">
+        <source src="vid/fondo.mp4" type="video/mp4">
+    </video>
+
+<div class="contenedor">
+
+    <a href="javascript:void(0)" id="btn-rosa" class="caja1">
+        <span style="font-size: 30px;">🌻</span>
+    </a>
+
+
+    <div class="caja2">
+        Dale clic al girasol 
+    </div>
+
+    <a href="final.html" class="caja3">
+        Siguiente
+    </a>
+</div>
+
+    <footer>
+        <p>AJC-S</p>
+    </footer>
+
+    <script>
+        document.getElementById('btn-rosa').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const cantidadRosas = 40; 
+
+            for (let i = 0; i < cantidadRosas; i++) {
+                crearRosa();
+            }
+        });
+
+        function crearRosa() {
+            const rosa = document.createElement('div');
+            rosa.classList.add('rosa-cayendo');
+            rosa.innerHTML = '🌻';
+
+            rosa.style.left = Math.random() * 100 + 'vw';
+            
+
+            const duracion = Math.random() * 3 + 3;
+            rosa.style.animationDuration = duracion + 's';
+            rosa.style.fontSize = (Math.random() * 20 + 20) + 'px';
+
+            document.body.appendChild(rosa);
+
+            // Elimina el elemento de la memoria cuando termina la caída
+            setTimeout(() => {
+                rosa.remove();
+            }, duracion * 1000);
+        }
+    </script>
+</body>
+</html>

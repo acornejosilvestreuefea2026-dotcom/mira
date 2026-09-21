@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira</title>
+    <link rel="stylesheet" href="mas.css">
+</head>
+<body>
+    <header>
+        <h1>:D</h1>
+    </header>
+
+    <img src="img/nao.png" alt="Fondo" class="imagen-fondo">
+
+    <!-- NUEVO CONTENEDOR CONTENIENDO LA IMAGEN Y LA CAJA 2 -->
+    <main class="seccion-contenido">
+        <img src="img/aaaa-removebg-preview.png" class="img1" width="300" height="400" alt="Snoopy">
+
+        <div class="caja2">
+            <h3>¡Felíz 21 de septiembre!</h3>
+            <p class="p1">Ten tus flores amarillas, esta vez no vas a estar de espectadora ya que mereces ser la protagonizta siempre</p>
+        </div>
+    </main>
+
+ <div class="contenedor">
+    <a href="javascript:void(0)" id="btn-rosa" class="caja1">
+        <span style="font-size: 26px;">🌻</span>
+    </a>
+
+    <!-- onclick hace que el botón regrese a la pantalla previa -->
+    <a href="principal.html" class="caja1">
+        regresar
+    </a>
+</div>
+
+    <footer>
+        <p></p>
+    </footer>
+
+    <script>
+        document.getElementById('btn-rosa').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const cantidadRosas = 80; 
+
+            for (let i = 0; i < cantidadRosas; i++) {
+                crearRosa();
+            }
+        });
+
+        function crearRosa() {
+            const rosa = document.createElement('div');
+            rosa.classList.add('rosa-cayendo');
+            rosa.innerHTML = '🌻';
+
+            rosa.style.left = Math.random() * 100 + 'vw';
+            
+
+            const duracion = Math.random() * 3 + 3;
+            rosa.style.animationDuration = duracion + 's';
+            rosa.style.fontSize = (Math.random() * 20 + 20) + 'px';
+
+            document.body.appendChild(rosa);
+
+            // Elimina el elemento de la memoria cuando termina la caída
+            setTimeout(() => {
+                rosa.remove();
+            }, duracion * 1000);
+        }
+    </script>
+
+</body>
+</html>
